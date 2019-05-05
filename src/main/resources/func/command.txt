@@ -1,0 +1,20 @@
+org.apache.hadoop.hive.contrib.udf.nat.ott.BdDecryptLatFunction
+org.apache.hadoop.hive.contrib.udf.nat.ott.BdDecryptLongFunction
+org.apache.hadoop.hive.contrib.udf.nat.ott.BdEncryptLatFunction
+org.apache.hadoop.hive.contrib.udf.nat.ott.BdEncryptLongFunction
+org.apache.hadoop.hive.contrib.udf.nat.ott.DeltaLatFunction
+org.apache.hadoop.hive.contrib.udf.nat.ott.DeltaLongFunction
+org.apache.hadoop.hive.contrib.udf.nat.ott.DistinceFunction
+org.apache.hadoop.hive.contrib.udf.nat.ott.GcjDecryptExactFunction
+org.apache.hadoop.hive.contrib.udf.nat.ott.GcjDecryptLatFunction
+org.apache.hadoop.hive.contrib.udf.nat.ott.GcjDecryptLongFunction
+org.apache.hadoop.hive.contrib.udf.nat.ott.GcjEncryptLatFunction
+org.apache.hadoop.hive.contrib.udf.nat.ott.GcjEncryptLongFunction
+org.apache.hadoop.hive.contrib.udf.nat.ott.GetDstncFunction
+
+
+//上传jar
+hadoop fs -ls  /
+hadoop fs -mkdir /root/function
+hadoop fs -put ./udf.jar /root/function/
+create  function BdDecryptLatFunction as 'org.apache.hadoop.hive.contrib.udf.nat.ott.BdDecryptLatFunction' using jar 'hdfs://hd1.fast.jsctc:8020/root/function/udf.jar'
